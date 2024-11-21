@@ -43,9 +43,13 @@ let StudentManagenent = {
 
   // Method to remove a student by ID
   removeStudent: function (id) {
-    const index = this.students.findIndex((student) => student.id === id); // Find the student by ID
+    const index = this.students.findIndex((student) => student.id === id); // findIndex() is a method that searches the array for an element that matches a condition.
+    //  const index = this.students.findIndex(function (student) {
+    //    return student.id === id;
+    //  });
+
     if (index !== -1) {
-      const removedStudent = this.students.splice(index, 1)[0]; // Remove the student
+      const removedStudent = this.students.splice(index, 1)[0]; // splice(index, 1) removes one element from the array at the specified index.
       console.log(`Student ${removedStudent.name} ${removedStudent.surname} removed.`);
     } else {
       console.log("Student not found.");
@@ -76,9 +80,9 @@ let StudentManagenent = {
 };
 
 // Adding students
-StudentManagenent.addStudent("John", "Doe", 20, "001", 8.8);
+StudentManagenent.addStudent("Peter", "Don", 20, "001", 8.8);
 StudentManagenent.addStudent("Jane", "Smith", 22, "002", 7.0);
-StudentManagenent.addStudent("Kate", "Rous", 25, "003", 9.1);
+StudentManagenent.addStudent("Kate", "Rose", 25, "003", 9.1);
 
 // Displaying all students
 StudentManagenent.displayStudents();
